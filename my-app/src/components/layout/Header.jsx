@@ -35,19 +35,21 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-lg w-full absolute top-full left-0">
-          <nav className="flex flex-col items-center gap-6 py-6 text-gray-700 font-medium">
-            <a href="#" className="hover:text-amber-700 transition" onClick={() => setIsOpen(false)}>Home</a>
-            <a href="#" className="hover:text-amber-700 transition" onClick={() => setIsOpen(false)}>About</a>
-            <a href="#" className="hover:text-amber-700 transition" onClick={() => setIsOpen(false)}>Products</a>
-            <a href="#" className="hover:text-amber-700 transition" onClick={() => setIsOpen(false)}>Contact</a>
-            <button className="bg-amber-700 text-white px-5 py-2 rounded-full hover:bg-amber-800 transition">
-              Shop Now
-            </button>
-          </nav>
-        </div>
-      )}
+      <div
+        className={`md:hidden bg-white shadow-lg w-full absolute top-full left-0 overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-screen py-6" : "max-h-0"
+        }`}
+      >
+        <nav className="flex flex-col items-center gap-6 text-gray-700 font-medium">
+          <a href="#" className="hover:text-amber-700 transition" onClick={() => setIsOpen(false)}>Home</a>
+          <a href="#" className="hover:text-amber-700 transition" onClick={() => setIsOpen(false)}>About</a>
+          <a href="#" className="hover:text-amber-700 transition" onClick={() => setIsOpen(false)}>Products</a>
+          <a href="#" className="hover:text-amber-700 transition" onClick={() => setIsOpen(false)}>Contact</a>
+          <button className="bg-amber-700 text-white px-5 py-2 rounded-full hover:bg-amber-800 transition">
+            Shop Now
+          </button>
+        </nav>
+      </div>
     </header>
   );
 }
