@@ -9,6 +9,7 @@ export default function Products() {
         {
             name: "Braids & Extensions",
             desc: "Explore endless styles and textures with our quality braids.",
+            price: "$20",
             img: "https://images.unsplash.com/photo-1648010035195-6b0a56e14667?auto=format&fit=crop&w=600&q=60", // updated braids image
         },
         {
